@@ -6,7 +6,7 @@ Instrucciones para empezar con Arduino en VSCode
 También nos descarga las librerías de extensión que nos hagan falta, manteniéndolas aisladas de las librerías de otros proyectos.
 
 ## Paso 1: Instalar el driver ch340 para poder manejar los arduinos con ese chip.
-Hay algunas placas Arduino que utilizan el diseño original de los fabricantes para controlar el puerto USB de la placa. Con esas no hay que hacer nada.
+Hay algunas placas Arduino que utilizan el diseño original de los fabricantes para controlar el puerto USB de la placa. Con esas no hay que hacer nada. Normalmente **Linux** ya incorpora este driver, así que no suele ser necesario, aunque es posible que haya que añadir al usuario que va a usar vscode al grupo *dialout*.
 
 Hay otras placas que usan el chip ch340 para conectarse por USB al ordenador. Según el sistema operativo, puede ser necesario instalar el controlador de este chip en el ordenador. Es necesario para usar el programa IDE de Arduino.
 
@@ -40,5 +40,10 @@ Platformio nos creará unas cuantas carpetas y archivos dentro de una carpeta es
 
 ## Paso 4: encender y apagar un LED
 Abre el archivo **main.cpp** que hay en la carpeta **src**. Copia el texto que ves en la imagen.
-[Extensiones](imagenes/programa.png)
+![Extensiones](imagenes/programa.png)
 Este lenguaje es una versión de *C++* adaptado al Arduino. Hay que fijarse en cada llave, paréntesis y punto y coma. Cualquier error impide que funcione la conversión del programa a código máquina.
+
+Una vez escrito y guardado, hay que pulsar en los botones adecuados, **build** y **upload**
+![Extensiones](imagenes/resultado.png)
+
+Si hay algún error en el programa, saldrán mensajes en el terminal. Se pueden leer, interpretar, buscar en Internet y corregir.
