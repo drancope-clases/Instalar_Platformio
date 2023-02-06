@@ -6,12 +6,14 @@ Instrucciones para empezar con Arduino en VSCode
 También nos descarga las librerías de extensión que nos hagan falta, manteniéndolas aisladas de las librerías de otros proyectos.
 
 ## Paso 1: Instalar el driver ch340 para poder manejar los arduinos con ese chip.
-Hay algunas placas Arduino que utilizan el diseño original de los fabricantes para controlar el puerto USB de la placa. Con esas no hay que hacer nada. Normalmente **Linux** ya incorpora este driver, así que no suele ser necesario, aunque es posible que haya que añadir al usuario que va a usar vscode al grupo *dialout*.
+Hay algunas placas Arduino que utilizan el diseño original de los fabricantes para controlar el puerto USB de la placa. Con esas no hay que hacer nada. Normalmente **Linux** ya incorpora este driver, así que no suele ser necesario, aunque es posible que haya que añadir al usuario que va a usar vscode al grupo *dialout*. Para esto, siendo administrador, hay que teclear la siguiente instrucción en el terminal: <code>sudo usermod -a -G dialout usuario</code>
 
 Hay otras placas que usan el chip ch340 para conectarse por USB al ordenador. Según el sistema operativo, puede ser necesario instalar el controlador de este chip en el ordenador. Es necesario para usar el programa IDE de Arduino.
 
 Se usarán las instrucciones de esta página web o de cualquier otra que busquéis en Internet:
 [instalar driver ch340](https://programmerclick.com/article/87861702877/)
+
+Ocasionalmente es posible que haya que desinstalar un gestor de dispositivos USB que interfiere con los instalados por Ubuntu. Se trata del paquete brltty.
 
 Después de esto podríamos descargar y probar el funcionamiento del IDE de Arduino, pero vamos a ir a otra opción a continuación.
 
@@ -21,6 +23,10 @@ Abrimos el programa y vamos a la pestaña de extensiones:
 
 Allí buscaremos la extensión y la instalamos:
 ![Extensiones](imagenes/instalar.png)
+
+Al menos en Linux, **Platformio** necesita la librería **distutils** de **Python**. En ubuntu debe instalarse con permisos de administrador con la instrucción <code>sudo apt install python3-distutils</code>
+
+Es probable que haya que reiniciar el sistema antes de que funcione.
 
 ## Paso 3: panel *home* y proyecto nuevo.
 Platformio nos instala una nueva pestaña de herramientas, con la imagen de una hormiga:
